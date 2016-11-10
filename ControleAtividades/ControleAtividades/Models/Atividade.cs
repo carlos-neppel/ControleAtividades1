@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ControleAtividades.Models
 {
@@ -30,5 +32,6 @@ namespace ControleAtividades.Models
         [Required, Display(Name="Status")]
         public Status StatusAtividade { get; set; }
 
+        
     }
 }
