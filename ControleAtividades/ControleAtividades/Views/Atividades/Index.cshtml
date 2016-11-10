@@ -26,9 +26,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Prioridade)
                 </th>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.StatusAtividade)
-                </th>
+                </th>*@
                 <th></th>
             </tr>
 
@@ -44,9 +44,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Prioridade)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.StatusAtividade)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.ActionLink("Edit", "Edit", new { id = item.AtividadeID }) |
                         @Html.ActionLink("Details", "Details", new { id = item.AtividadeID }) |
