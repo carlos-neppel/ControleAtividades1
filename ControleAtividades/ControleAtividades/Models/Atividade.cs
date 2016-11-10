@@ -13,9 +13,11 @@ namespace ControleAtividades.Models
         public enum Status
         {
             [Display(Name="A Fazer")]
-            AFazer,
-            Fazendo,
-            Feito
+            AFazer = 0,
+            [Display(Name = "Fazendo")]
+            Fazendo = 1,
+            [Display(Name = "Feito")]
+            Feito = 2
         }
 
         public int AtividadeID { get; set; }
@@ -31,6 +33,19 @@ namespace ControleAtividades.Models
 
         [Required, Display(Name="Status")]
         public Status StatusAtividade { get; set; }
+
+        public List<KeyValuePair<int, string>> StatusLista { get; set; }
+
+        public IEnumerable<SelectListItem> StatusSelect
+        {
+            get
+            {
+                var selectList = new SelectList(StatusLista, "Key", "Value");
+
+                return selectList.OrderBy(x => x.Text);
+            }
+        }
+
 
         
     }
