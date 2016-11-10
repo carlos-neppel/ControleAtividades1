@@ -38,7 +38,21 @@ namespace ControleAtividades.Controllers
         // GET: /Atividades/Create
         public ActionResult Create()
         {
-            return View();
+            var lista = Enum.GetValues(typeof(ControleAtividades.Models.Atividade.Status)).Cast<ControleAtividades.Models.Atividade.Status>().ToList();
+            Dictionary<int, string> list = new Dictionary<int, string>();
+            foreach (var item in Enum.GetNames(typeof(ControleAtividades.Models.Atividade.Status)))
+            {
+                int key = ((int)Enum.Parse(typeof(ControleAtividades.Models.Atividade.Status), item));
+
+                    list.Add(key, Extensoes.EnumExtensoes.GetDisplayName((ControleAtividades.Models.Atividade.Status)key, typeof(ControleAtividades.Models.Atividade.Status)));
+            }
+
+            var atividade = new Atividade
+            {
+                StatusLista = list.ToList()
+            };
+
+            return View(atividade);            
         }
 
         // POST: /Atividades/Create
@@ -61,11 +75,23 @@ namespace ControleAtividades.Controllers
         // GET: /Atividades/Edit/5
         public ActionResult Edit(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Atividade atividade = db.Atividades.Find(id);
+
+            var lista = Enum.GetValues(typeof(ControleAtividades.Models.Atividade.Status)).Cast<ControleAtividades.Models.Atividade.Status>().ToList();
+            Dictionary<int, string> list = new Dictionary<int, string>();
+            foreach (var item in Enum.GetNames(typeof(ControleAtividades.Models.Atividade.Status)))
+            {
+                int key = ((int)Enum.Parse(typeof(ControleAtividades.Models.Atividade.Status), item));
+
+                list.Add(key, Extensoes.EnumExtensoes.GetDisplayName((ControleAtividades.Models.Atividade.Status)key, typeof(ControleAtividades.Models.Atividade.Status)));
+            }
+
+            atividade.StatusLista = list.ToList();
             if (atividade == null)
             {
                 return HttpNotFound();

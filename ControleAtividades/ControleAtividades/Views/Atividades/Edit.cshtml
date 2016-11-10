@@ -42,10 +42,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.StatusAtividade, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.StatusAtividade, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StatusAtividade)
-                @Html.ValidationMessageFor(model => model.StatusAtividade)
+                @Html.DropDownListFor(model => model.StatusAtividade, Model.StatusSelect, htmlAttributes: new { autofocus = "autofocus" })
+                @Html.ValidationMessageFor(model => model.StatusAtividade, "", new { @class = "text-danger" })
             </div>
         </div>
 
