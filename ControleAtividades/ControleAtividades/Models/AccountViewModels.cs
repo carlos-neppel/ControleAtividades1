@@ -30,11 +30,11 @@ namespace ControleAtividades.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "*")]
         [Display(Name = "Usuario")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "*")]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }

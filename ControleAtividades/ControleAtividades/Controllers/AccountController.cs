@@ -53,7 +53,7 @@ namespace ControleAtividades.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", "Usuário ou senha inválido!");
                 }
             }
 

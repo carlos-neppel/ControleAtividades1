@@ -1,55 +1,61 @@
 ﻿@model ControleAtividades.Models.LoginViewModel
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Logar";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Use sua conta para fazer log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true)
-                <div class="form-group">
-                    @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.UserName)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password)
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
+                <div class="form-horizontal" style="margin-left:3px">
+                    <div class="form-control form-group" style="width: 400px; height: 280px; background-color: lightblue; margin-left: -2px;margin-top:50px; border-radius: 10px">
+                        <div style="margin-top: 5px">
+                            <h6>Login</h6>&nbsp;
+                        </div>
+                        <div class="form-group" style="margin-top:10px; width:500px; position:static">
+                            @Html.LabelFor(model => model.UserName, new { @class = "control-label col-lg-2" })
+                            <div class="col-md-10" style="width:300px; margin-left:10px">
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                <div class="col-md-4" style="margin-top:-25px; margin-left:260px; text-emphasis-color:red; font-size:10px">
+                                    @Html.ValidationMessageFor(model => model.UserName, null, new { @style = "color:red" })
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group" style="margin-top:-10px; width:500px">
+                            @Html.LabelFor(model => model.Password, new { @class = "control-label col-lg-2" })
+                            <div class="col-md-10" style="width:300px; margin-left:10px">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                <div class="col-md-4" style="margin-top:-25px; margin-left:260px; text-emphasis-color:red; font-size:10px">
+                                    @Html.ValidationMessageFor(model => model.Password, null, new { @style = "color:red" })
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" style="margin-top:-15px">
+                            <div class="col-md-offset-10">
+                                <input type="submit" value="Enviar" class="btn btn-success" style="width:87px; margin-top:3px; margin-left:-47px" />
+                            </div>
+                            <div style="margin-left:110px">
+                                @Html.CheckBox("PermanecerConectado")
+                                @Html.Label("Permanecer conectado")
+                            </div>
+                            <div class="navbar-link" style="margin-left:130px; margin-top:4px">
+                                @Html.ActionLink("Não Possui Login?", "Create")
+                            </div>
+                            <div style="margin-left:100px; margin-top:30px">
+                                @Html.ValidationSummary(true)
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Cadastre-se","Register" ) se você nao tiver uma conta
-                </p>
             }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
         </section>
     </div>
 </div>
