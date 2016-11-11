@@ -10,6 +10,7 @@ using ControleAtividades.Models;
 
 namespace ControleAtividades.Controllers
 {
+    [Authorize]
     public class AtividadesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

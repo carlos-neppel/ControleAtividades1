@@ -30,8 +30,10 @@ namespace ControleAtividades.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login(FormCollection f, string returnUrl)
         {
+            //Rotina para autenticar o usuário
+            System.Web.Security.FormsAuthentication.SetAuthCookie(f["login"], false);
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -289,6 +291,8 @@ namespace ControleAtividades.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            //Rotina para remover autenticação do usuário
+            System.Web.Security.FormsAuthentication.SignOut();
             AuthenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
         }
