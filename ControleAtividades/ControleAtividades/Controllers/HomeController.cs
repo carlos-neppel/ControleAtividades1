@@ -10,7 +10,10 @@ namespace ControleAtividades.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            
+
+            return RedirectToAction("Index", "Atividades");
+            //return View();
         }
 
         public ActionResult About()

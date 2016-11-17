@@ -332,8 +332,9 @@ C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\bin\Sys
 C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\bin\System.Web.WebPages.xml
 C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\bin\System.Web.WebPages.Deployment.xml
 C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\bin\System.Web.WebPages.Razor.xml
-C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\obj\Debug\ControleAtividades.csprojResolveAssemblyReference.cache
 C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\obj\Debug\ControleAtividades.Migrations._1.resources
 C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\obj\Debug\ControleAtividades.csproj.GenerateResource.Cache
 C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\obj\Debug\ControleAtividades.dll
 C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\obj\Debug\ControleAtividades.pdb
+C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\obj\Debug\ControleAtividades.Migrations.adicionando_idUsuario.resources
+C:\Documentos\Douglas\Projetos\Git\ControleAtividades\ControleAtividades\obj\Debug\ControleAtividades.csprojResolveAssemblyReference.cache

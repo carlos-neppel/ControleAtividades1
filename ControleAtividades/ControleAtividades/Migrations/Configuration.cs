@@ -10,6 +10,7 @@ namespace ControleAtividades.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            
         }
 
         protected override void Seed(ControleAtividades.Models.ApplicationDbContext context)

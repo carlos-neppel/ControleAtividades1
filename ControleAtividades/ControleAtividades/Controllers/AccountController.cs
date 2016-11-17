@@ -51,6 +51,9 @@ namespace ControleAtividades.Controllers
                 if (user != null)
                 {
                     await SignInAsync(user, model.RememberMe);
+
+                    Session["UsuarioID"] = user.Id;
+
                     return RedirectToLocal(returnUrl);
                 }
                 else
