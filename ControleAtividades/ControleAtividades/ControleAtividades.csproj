@@ -185,6 +185,10 @@
     <Compile Include="Migrations\201611101341269_1.Designer.cs">
       <DependentUpon>201611101341269_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611171111126_adicionando_idUsuario.cs" />
+    <Compile Include="Migrations\201611171111126_adicionando_idUsuario.Designer.cs">
+      <DependentUpon>201611171111126_adicionando_idUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Atividade.cs" />
@@ -270,6 +274,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611101341269_1.resx">
       <DependentUpon>201611101341269_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611171111126_adicionando_idUsuario.resx">
+      <DependentUpon>201611171111126_adicionando_idUsuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

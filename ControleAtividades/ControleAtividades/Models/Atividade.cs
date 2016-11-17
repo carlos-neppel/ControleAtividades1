@@ -34,6 +34,8 @@ namespace ControleAtividades.Models
         [Required, Display(Name="Status")]
         public Status StatusAtividade { get; set; }
 
+        public String UsuarioID { get; set; }
+        
         public List<KeyValuePair<int, string>> StatusLista { get; set; }
 
         public IEnumerable<SelectListItem> StatusSelect

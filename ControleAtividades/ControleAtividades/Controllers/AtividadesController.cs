@@ -18,7 +18,12 @@ namespace ControleAtividades.Controllers
         // GET: /Atividades/
         public ActionResult Index()
         {
-            return View(db.Atividades.ToList());
+            String idUSu = String.Empty;
+            if (Session["UsuarioID"] != null)
+                idUSu = Session["UsuarioID"].ToString();
+
+            //return View(db.Atividades.ToList());
+            return View(db.Atividades.Where(a => a.UsuarioID.Equals(idUSu)).ToList());
         }
 
         // GET: /Atividades/Details/5
@@ -65,6 +70,8 @@ namespace ControleAtividades.Controllers
         {
             if (ModelState.IsValid)
             {
+                atividade.UsuarioID = Session["UsuarioID"].ToString();
+
                 db.Atividades.Add(atividade);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -109,6 +116,7 @@ namespace ControleAtividades.Controllers
         {
             if (ModelState.IsValid)
             {
+                atividade.UsuarioID = Session["UsuarioID"].ToString();
                 db.Entry(atividade).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
