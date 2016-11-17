@@ -30,10 +30,9 @@ namespace ControleAtividades.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(FormCollection f, string returnUrl)
+        public ActionResult Login(string returnUrl)
         {
             //Rotina para autenticar o usuário
-            System.Web.Security.FormsAuthentication.SetAuthCookie(f["login"], false);
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
