@@ -158,5 +158,42 @@ namespace ControleAtividades.Controllers
             }
             base.Dispose(disposing);
         }
+
+       
+       
+        public ActionResult MudaStatus(int id, string comando)
+        {
+            Atividade atividade = new Atividade();
+           atividade = db.Atividades.Find(id);
+
+            if(atividade.StatusAtividade == ControleAtividades.Models.Atividade.Status.AFazer)
+            {
+                atividade.StatusAtividade = ControleAtividades.Models.Atividade.Status.Fazendo;
+            }
+            else if(atividade.StatusAtividade == ControleAtividades.Models.Atividade.Status.Fazendo)
+            {
+                if(comando == "acima")
+                {
+                    atividade.StatusAtividade = ControleAtividades.Models.Atividade.Status.AFazer;
+                }
+                else
+                {
+                    atividade.StatusAtividade = ControleAtividades.Models.Atividade.Status.Feito;
+                }
+            }
+            else
+            {
+                atividade.StatusAtividade = ControleAtividades.Models.Atividade.Status.Fazendo;
+            }
+
+            if (ModelState.IsValid)
+            {
+                atividade.UsuarioID = Session["UsuarioID"].ToString();
+                db.Entry(atividade).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -51,6 +51,11 @@
                         @Html.ActionLink("Edit", "Edit", new { id = item.AtividadeID }) |
                         @Html.ActionLink("Details", "Details", new { id = item.AtividadeID }) |
                         @Html.ActionLink("Delete", "Delete", new { id = item.AtividadeID })
+                    </td>                   
+                    <td>
+                        
+                            @Html.ActionLink(" ", "MudaStatus", new { id = item.AtividadeID, comando = "abaixo" }, new{@class ="glyphicon glyphicon-arrow-down"})
+                        
                     </td>
                 </tr>
             }
@@ -93,6 +98,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Prioridade)
                 </td>
+                
                 @*<td>
                     @Html.DisplayFor(modelItem => item.StatusAtividade)
                 </td>*@
@@ -101,6 +107,19 @@
                     @Html.ActionLink("Details", "Details", new { id = item.AtividadeID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.AtividadeID })
                 </td>
+
+                <td>
+
+                    @Html.ActionLink(" ", "MudaStatus", new { id = item.AtividadeID, comando = "acima" }, new { @class = "glyphicon glyphicon-arrow-up" })
+
+                </td>
+                
+                <td>
+
+                    @Html.ActionLink(" ", "MudaStatus", new { id = item.AtividadeID, comando = "abaixo" }, new { @class = "glyphicon glyphicon-arrow-down" })
+
+                </td>
+                
             </tr>
     }
 
@@ -149,6 +168,11 @@
                     @Html.ActionLink("Edit", "Edit", new { id = item.AtividadeID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.AtividadeID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.AtividadeID })
+                </td>
+                <td>
+
+                    @Html.ActionLink(" ", "MudaStatus", new { id = item.AtividadeID, comando = "acima" }, new { @class = "glyphicon glyphicon-arrow-up" })
+
                 </td>
             </tr>
             }
