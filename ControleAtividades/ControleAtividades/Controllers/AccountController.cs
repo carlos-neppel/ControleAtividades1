@@ -88,6 +88,7 @@ namespace ControleAtividades.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
+                    Session["UsuarioID"] = user.Id;
                     return RedirectToAction("Index", "Home");
                 }
                 else

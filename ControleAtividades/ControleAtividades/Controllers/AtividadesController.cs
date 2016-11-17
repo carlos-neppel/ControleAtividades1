@@ -116,6 +116,7 @@ namespace ControleAtividades.Controllers
         {
             if (ModelState.IsValid)
             {
+                atividade.UsuarioID = Session["UsuarioID"].ToString();
                 db.Entry(atividade).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
